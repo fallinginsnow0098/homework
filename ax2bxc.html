@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ax2bxc</title>
+</head>
+<body>
+<script>
+  let a = +prompt('Enter num1');
+  let b = +prompt('Enter num2');
+  let c = +prompt('Enter num3');
+
+  let dt = b^2 - 4*a*c ;
+  let x1 = ((-b) + Math.sqrt(dt))/(2*a) ;
+  let x2 = ((-b) - Math.sqrt(dt))/(2*a) ;
+  let x = (-b)/(2*a) ;
+
+  if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      alert('Enter a num')
+  } else if ( dt < 0 ){
+      alert('Phương trình vô nghiệm!')
+  } else if ( dt == 0 ){
+      alert('Phương trình có nghiệm kép là x =' + x)
+  } else if ( dt > 0 ){
+      alert('Phương trình có hai nghiệm phân biệt là x1 =' + x1 + 'và x2 = ' + x2)
+  }
+
+
+</script>
+</body>
+</html>
