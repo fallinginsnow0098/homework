@@ -3,7 +3,6 @@ package bai1;
 public class Student{
     private static int count = 0;
 
-    private int id ;
     private String name ;
     private int age ;
     private String gender ;
@@ -13,21 +12,13 @@ public class Student{
     public Student() {
     }
 
-    public Student(int id, String name, int age, String gender, String address, double pga) {
-        this.id = id;
+    public Student( String name, int age, String gender, String address, double pga) {
+
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.address = address;
         this.pga = pga;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id ;
     }
 
     public String getName() {
@@ -72,8 +63,7 @@ public class Student{
 
     @Override
     public String toString() {
-        return "bai1.Student{" +
-                "id=" + id +
+        return "Student{" +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +

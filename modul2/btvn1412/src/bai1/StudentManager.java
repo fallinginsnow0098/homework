@@ -15,35 +15,11 @@ public class StudentManager implements Comparator<Student> {
         this.students = students;
     }
 
-    public Student[] getStudents() {
-        return students;
-    }
+    public void addStudent(Student student){
+        students[index] = student;
+        index++ ;
+        System.out.println("Add complete!");
 
-    public void setStudents(Student[] students) {
-        this.students = students;
-    }
-
-    public Student creatStudent(Scanner scanner) {
-        System.out.println("Nhập id");
-        int id = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Nhập tên");
-        String name = scanner.nextLine();
-        System.out.println("Nhập tuổi");
-        int age = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Nhập giới tính");
-        String gender = scanner.nextLine();
-        System.out.println("Nhập địa chỉ");
-        String address = scanner.nextLine();
-        System.out.println("Nhập điểm trung bình");
-        double pga = scanner.nextDouble();
-        return new Student(id,name,age,gender,address,pga);
-    }
-    public void addStudentList(Scanner scanner, Student[] students){
-        for (int i = 0; i < students.length; i++) {
-            students[i] = creatStudent(scanner);
-        }
     }
 
     public void displayAllStudent(){
@@ -59,26 +35,30 @@ public class StudentManager implements Comparator<Student> {
     }
     public void displayHighestPGA(){
         double highestPGA = students[0].getPga();
+        Student s = students[0];
         for ( Student st : students) {
-            if (st.getPga() > highestPGA){
+            if (st!= null && st.getPga() > highestPGA){
                 highestPGA = st.getPga();
+                s = st ;
             }
         }
-        System.out.println(highestPGA);
+        System.out.println(s);
     }
     public void displayLowestPGA(){
         double lowestPGA = students[0].getPga();
+        Student s = students[0];
         for ( Student st : students ) {
-            if (st.getPga() < lowestPGA){
+            if (st != null && st.getPga() < lowestPGA){
                 lowestPGA = st.getPga();
+                s = st;
             }
         }
-        System.out.println(lowestPGA);
+        System.out.println(s);
     }
     public void searchByName(String searchName){
         boolean check = false ;
         for ( Student st : students ) {
-            if (st.getName().equals(searchName)){
+            if (st != null && st.getName().equals(searchName)){
                 check = true ;
                 System.out.println(st);
             }

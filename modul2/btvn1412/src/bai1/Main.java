@@ -17,19 +17,30 @@ public class Main {
             System.out.println("2. Hiển thị tất cả sinh viên");
             System.out.println("3. Hiển thị sinh viên có điểm cao nhất");
             System.out.println("4. Hiển thị sinh viên có điểm thấp nhất");
-            System.out.println("5. Thêm 1 sinh viên vào mảng");
-            System.out.println("6. Xóa một sinh viên theo tên");
-            System.out.println("7. Tìm kiếm sv theo tên");
-            System.out.println("8. Hiển thị các sinh viên theo giới tính");
-            System.out.println("9. Sắp xếp danh sách sinh viên theo điểm trung bình tăng dần");
-            System.out.println("10. Exit Menu");
+            System.out.println("5. Xóa một sinh viên theo tên");
+            System.out.println("6. Tìm kiếm sv theo tên");
+            System.out.println("7. Hiển thị các sinh viên theo giới tính");
+            System.out.println("8. Sắp xếp danh sách sinh viên theo điểm trung bình tăng dần");
+            System.out.println("9. Exit Menu");
 
             choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice){
                 case 1:
-                    studentManager.addStudentList(scanner, students);
+                    System.out.println("Nhập tên");
+                    String name = scanner.nextLine();
+                    System.out.println("Nhập tuổi");
+                    int age = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Nhập giới tính");
+                    String gender = scanner.nextLine();
+                    System.out.println("Nhập địa chỉ");
+                    String address = scanner.nextLine();
+                    System.out.println("Nhập điểm TB");
+                    double pga = scanner.nextDouble();
+                    Student student = new Student(name, age, gender, address, pga);
+                    studentManager.addStudent(student);
                     break;
                 case 2:
                     studentManager.displayAllStudent();
@@ -40,27 +51,25 @@ public class Main {
                 case 4:
                     studentManager.displayLowestPGA();
                     break;
-//                case 5:
-
-                case 6:
+                case 5:
                     studentManager.deleteStudent(scanner);
                     break;
-                case 7:
+                case 6:
                     System.out.println("Nhập vào tên sinh viên cần tìm");
                     String searchName = scanner.nextLine();
                     studentManager.searchByName(searchName);
                     break;
-                case 8:
+                case 7:
                     System.out.println("Nhập vào giới tính sinh viên cần hiển thị");
                     String searchGender = scanner.nextLine();
                     studentManager.displayByGender(searchGender);
                     break;
-                case 9:
+                case 8:
                     System.out.println("Sắp xếp sinh viên theo thứ tự điểm trung bình tăng dần là: ");
                     studentManager.sortPGA();
                     break;
-                case 10:
-                    System.exit(10);
+                case 9:
+                    System.exit(9);
                     break;
             }
 
