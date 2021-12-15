@@ -1,8 +1,8 @@
 package bai1;
 
 public class Student{
-    private static int count = 0;
-
+    private static int value = 1;
+    private int id ;
     private String name ;
     private int age ;
     private String gender ;
@@ -13,12 +13,13 @@ public class Student{
     }
 
     public Student( String name, int age, String gender, String address, double pga) {
-
+        this.id = value;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.address = address;
         this.pga = pga;
+        value++;
     }
 
     public String getName() {
