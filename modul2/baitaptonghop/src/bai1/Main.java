@@ -13,7 +13,8 @@ public class Main {
             System.out.println("1. Add new customer's information");
             System.out.println("2. Display all customer's infomation");
             System.out.println("3. Delete customer's infomation by customer's number");
-            System.out.println("4. Exit ");
+            System.out.println("4. Get money to pay after stay");
+            System.out.println("5. Exit ");
             System.out.println("Enter your choice");
             choice = scanner.nextInt();
             switch (choice){
@@ -27,8 +28,14 @@ public class Main {
                     System.out.println("Enter customer's number to delete information");
                     int deleteNumber = scanner.nextInt();
                     manager.deleteCustomerInformation(deleteNumber);
+                    break;
                 case 4:
-                    System.exit(4);
+                    System.out.println("Enter customer's number to get money information");
+                    int findNumberr = scanner.nextInt();
+                    manager.getMoney(findNumberr);
+                    break;
+                case 5:
+                    System.exit(5);
             }
         }while (choice!=0);
     }

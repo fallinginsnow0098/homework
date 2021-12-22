@@ -38,14 +38,37 @@ public class Manager {
     }
     public void deleteCustomerInformation(int personNumber){
         Person person = null;
-        for (Person p: hashmapManager.keySet()) {
-            if (p.getPersonNumber() == personNumber){
-                person = p;
+        if (listIsEmpty()){
+            for (Person p: hashmapManager.keySet()) {
+                if (p.getPersonNumber() == personNumber){
+                    person = p;
+                }
             }
+            hashmapManager.remove(person);
+        } else {
+            System.out.println("list is empty now!");
         }
-
-        hashmapManager.remove(person);
         display();
+    }
+    public boolean listIsEmpty(){
+        return !hashmapManager.isEmpty();
+    }
+    public void getMoney(int personNumber){
+        if (listIsEmpty()){
+            boolean check = false;
+            for (Map.Entry<Person, Hotel> getMoney : hashmapManager.entrySet()) {
+                if (getMoney.getKey().getPersonNumber() == personNumber){
+                    check = true;
+                    System.out.println("After " + getMoney.getValue().getStayDay() + " days, you have pay " + getMoney.getValue().getPrice() * getMoney.getValue().getStayDay());
+                    break;
+                }
+            }
+            if (!check){
+                System.out.println("Number error");
+            }
+        } else {
+            System.out.println("List is empty now!");
+        }
     }
 
 }
