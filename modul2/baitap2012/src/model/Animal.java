@@ -1,3 +1,5 @@
+package model;
+
 public class Animal {
     private String name;
     private int age;
@@ -36,12 +38,11 @@ public class Animal {
         this.weight = weight;
     }
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", weight=" + weight +
-                '}';
+    public void display() {
+        System.out.printf("%-20s", "Animal");
+        System.out.printf("%-20S", name);
+        System.out.printf("%-20s", age);
+        System.out.printf("%s", weight);
+        System.out.println();
     }
 }
