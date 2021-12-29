@@ -8,8 +8,8 @@ public class Student extends Human implements Serializable {
     public Student() {
     }
 
-    public Student(String name, int age, String address, double averagePoint) {
-        super(name, age, address);
+    public Student(String name, int age, String gender, String address, double averagePoint) {
+        super(name, age, gender, address);
         this.averagePoint = averagePoint;
     }
 
@@ -26,6 +26,7 @@ public class Student extends Human implements Serializable {
         return "Student[" +
                 "| name: " + super.getName() +
                 "| age: " + super.getAge() +
+                "| gender: " + super.getGender() +
                 "| address: " + super.getAddress() +
                 "| averagePoint: " + getAveragePoint() + "]";
     }

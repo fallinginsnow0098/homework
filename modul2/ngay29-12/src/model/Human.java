@@ -3,14 +3,16 @@ package model;
 public class Human {
     private String name;
     private int age;
+    private String gender;
     private String address;
 
     public Human() {
     }
 
-    public Human(String name, int age, String address) {
+    public Human(String name, int age,String gender, String address) {
         this.name = name;
         this.age = age;
+        this.gender = gender;
         this.address = address;
     }
 
@@ -30,6 +32,14 @@ public class Human {
         this.age = age;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -43,6 +53,7 @@ public class Human {
         return "Human{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", gender='" + gender + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
