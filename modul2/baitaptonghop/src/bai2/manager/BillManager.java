@@ -42,12 +42,8 @@ public class BillManager {
     public double payBill(int electricCodePay){
         ArrayList<Bill> billPay = new ArrayList<>();
         double cash = 0;
-
         for (Bill b: billList ) {
             if (b.getCustomer().getElectricCode() == electricCodePay){
-//                if (b.getNextElectricNumber() < b.getPreElectricNumber()){
-//
-//                }
                 cash = ( b.getNextElectricNumber() - b.getPreElectricNumber() ) * 750;
                 billPay.add(b);
             }

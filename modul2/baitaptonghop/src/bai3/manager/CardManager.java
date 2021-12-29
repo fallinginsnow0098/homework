@@ -45,6 +45,16 @@ public class CardManager {
             System.out.println("Không tìm thấy!");
         }
     }
-
-
+    public ArrayList<Card> listBackupCard(){
+        ArrayList<Card> cardArrayList = null;
+        Card card = null;
+        for (Card c : cards) {
+            if (LocalDate.now().getDayOfYear() - c.getOutDate().getDayOfYear() >= 0){
+                card = c;
+            }
+        }
+        assert false;
+        cardArrayList.add(card);
+        return cardArrayList;
+    }
 }

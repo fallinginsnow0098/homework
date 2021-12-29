@@ -2,9 +2,11 @@ package bai3.main;
 
 import bai3.manager.CardManager;
 import bai3.manager.StudentManager;
+import bai3.model.Card;
 import bai3.model.Student;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -83,6 +85,11 @@ public class MainMenu {
                     int searchId = scanner.nextInt();
                     cardManager.displayByName(searchId);
                     break;
+                case 3:
+                    System.out.println("Danh sách học sinh phải trả sách");
+                    for (Card c: cardManager.listBackupCard()) {
+                        System.out.println(c);
+                    }
             }
         } while (choice2 != 0);
     }
